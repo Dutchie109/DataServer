@@ -41,3 +41,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/agents/nbproject/private/
+/agents/build/
+/agents/dist/
