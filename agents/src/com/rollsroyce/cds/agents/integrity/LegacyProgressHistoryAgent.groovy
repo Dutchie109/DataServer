@@ -8,7 +8,7 @@ println "Starting DB connection";
 def mongoClient = new MongoClient("127.0.0.1");
 
 println "Clearing existing collection";
-def collection = mongoClient.getDB("test").getCollection("IPs");
+def collection = mongoClient.getDB("CDS").getCollection("IPs");
 collection.drop();
 
 println "Getting XML data";
