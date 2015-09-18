@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET IP listing. */
 router.get('/', function(req, res, next) {
     var db = req.db;
     var collection = db.get('IPs');
@@ -10,11 +10,12 @@ router.get('/', function(req, res, next) {
     });
 });
 
+/* GET specific IP. */
 router.get('/:id', function(req, res, next) {
     var db = req.db;
     var collection = db.get('IPs');
-    collection.find({},{fields:{HistoricalProgress:0}},function(e,docs){
-        res.json({id:req.params.id});
+    collection.findOne({IntegrityID: req.params.id},{},function(e,docs){
+        res.json(docs);
     });
 });
 
