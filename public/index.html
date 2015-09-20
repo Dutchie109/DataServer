@@ -2,6 +2,9 @@
     <!DOCTYPE html>
     <html ng-app="dsApp">
     <head>
+	
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	
       <!-- SCROLLS -->
       <!-- load bootstrap and fontawesome via CDN -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
@@ -10,8 +13,11 @@
       <!-- SPELLS -->
       <!-- load angular and angular route via CDN -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-          <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-      <script src="javascripts/script.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="javascripts/clientApp.js"></script>
+
+  
+	  
     </head>
     <body ng-controller="mainController">
 
@@ -20,7 +26,7 @@
             <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                    <a class="navbar-brand" href="/">Data Server</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -34,10 +40,11 @@
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <div id="main">
-		{{ message }}
-            <!-- angular templating -->
-            <!-- this is where content will be injected -->
 
+			<!-- angular templating -->
+			<!-- this is where content will be injected -->
+			<div ng-view></div>			
+			
         </div>
 
     </body>
