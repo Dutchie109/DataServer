@@ -6,6 +6,34 @@
 
         <p>{{ message }}</p>
 	
-	
+		<style>
+		#chart_container {
+				position: relative;
+				font-family: Arial, Helvetica, sans-serif;
+		}
+		#chart {
+				position: relative;
+				left: 40px;
+		}
+		#y_axis {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 40px;
+		}
+		</style>
+
+
+		<div id="chart_container">
+		<table>
+			<tr>
+				<td><div id="y_axis"></div>
+				<div id="chart"></div></td>
+				<td><div id="legend"></div></td>
+			</tr>
+		</table>		
+				
+		</div>
+		
 		
     </div>
