@@ -26,7 +26,14 @@
 			// route for the IPs page
             .when('/ips', {
                 templateUrl : 'pages/ips.html',
-                controller  : 'ipsConroller'
+                controller  : 'ipsController'
+            })
+			
+			
+			// route for the IPs page
+            .when('/ips/:id', {
+                templateUrl : 'pages/ip.html',
+                controller  : 'ipController'
             });
     });	
 	
@@ -45,52 +52,17 @@
         $scope.message = 'Contact us! JK. This is just a demo.';
     });
 	
-    dsApp.controller('ipsConroller', function($scope) {
+    dsApp.controller('ipsController', function($scope) {
         $scope.message = 'IPs page';
+		
+		$(function () {
+            $('[data-toggle="table"]').bootstrapTable();
+        });
 
-		$scope.populateIPData = function(){
-			$.getJSON( "/ips")
-			.done(function( data ) {
-			  
-			  var table = $("#ipTable");
-			  table.empty();
-			  
-			  table.append($('<thead>')
-					.append($('<tr>')
-						.append($('<td>')
-							.text('IntegrityID')
-						)
-						.append($('<td>')
-							.text('Title')
-						)
-						.append($('<td>')
-							.text('Project')
-						)
-					)			  
-			  )
-			  .append($('<tbody>'));
-			  
-		
-			  
-			  for(var i in data){
-				  //Console.log(data[i]._id);
-				  
-				$("#ipTable").find('tbody')
-					.append($('<tr>')
-						.append($('<td>')
-							.text(data[i].IntegrityID)
-						)
-						.append($('<td>')
-							.text(data[i].Title)
-						)
-						.append($('<td>')
-							.text(data[i].Project)
-						)
-					);		  
-				  
-			  }
-			  
-			});
-		};
-		
+	
     });	
+	
+    dsApp.controller('ipController', ['$scope','$routeParams',function($scope,$routeParams) {
+        $scope.message = 'Single IP page: ' + $routeParams.id;
+    }]);	
+	

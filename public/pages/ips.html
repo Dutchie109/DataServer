@@ -6,17 +6,30 @@
 
         <p>{{ message }}</p>
 
-	<table ng-init="populateIPData()" id="ipTable" class="table">
-		<thead>
-			<tr>
-				<th>Item ID</th>
-				<th>Item Title</th>
-				<th>Item Project</th>
-			</tr>
-		</thead>
-		<tbody>
-
-		</tbody>
-	</table>	
+		
+		<div id="toolbar">
+		</div>
+		 <!--data-show-columns="true"
+				   data-show-export="true"-->
+		<table data-toggle="table" data-url="/ips"
+				   data-toolbar="#toolbar"
+				   data-search="true"
+				   data-show-refresh="true"
+				   data-show-toggle="true"
+				   data-minimum-count-columns="2"
+				   data-show-pagination-switch="true"
+				   data-pagination="true"
+				   data-id-field="id"
+				   data-page-list="[10, 25, 50, 100, ALL]"
+				   data-show-footer="true">
+			<thead>
+				<tr>
+					<th data-field="IntegrityID">Item ID</th>
+					<th data-field="Title">Item Title</th>
+					<th data-field="Project">Item Project</th>
+				</tr>
+			</thead>
+		</table>		
+	
 		
     </div>
